@@ -13,43 +13,47 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
+  skip: true  # [win]
 
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-jsonlite                 # [build_platform != target_platform]
+    - r-checkmate                # [build_platform != target_platform]
     - r-data.table               # [build_platform != target_platform]
+    - r-jsonlite                 # [build_platform != target_platform]
     - r-processx                 # [build_platform != target_platform]
     - r-posterior                # [build_platform != target_platform]
-    - r-withr                    # [build_platform != target_platform]
-    - r-checkmate                # [build_platform != target_platform]
     - r-r6                       # [build_platform != target_platform]
-    - {{ posix }}filesystem        # [win]
+    - r-rlang                    # [build_platform != target_platform]
+    - r-withr                    # [build_platform != target_platform]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}git
-    - {{ posix }}zip               # [win]
+    - {{ posix }}zip             # [win]
 
   host:
     - r-base
-    - r-r6 >=2.4.0
     - r-checkmate
     - r-data.table
     - r-jsonlite >=1.2.0
-    - r-posterior >=1.1.0
+    - r-posterior >=1.4.1
     - r-processx >=3.5.0
+    - r-r6 >=2.4.0
+    - r-rlang >=0.4.7
     - r-withr >=2.5.0
 
   run:
     - r-base
-    - r-r6 >=2.4.0
     - r-checkmate
     - r-data.table
     - r-jsonlite >=1.2.0
-    - r-posterior >=1.1.0
+    - r-posterior >=1.4.1
     - r-processx >=3.5.0
+    - r-r6 >=2.4.0
+    - r-rlang >=0.4.7
     - r-withr >=2.5.0
     - cmdstan
 
