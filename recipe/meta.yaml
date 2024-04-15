@@ -13,27 +13,18 @@ source:
 
 build:
   merge_build_host: true  # [win]
+  noarch: generic
   number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
 
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - r-checkmate                # [build_platform != target_platform]
-    - r-data.table               # [build_platform != target_platform]
-    - r-jsonlite                 # [build_platform != target_platform]
-    - r-processx                 # [build_platform != target_platform]
-    - r-posterior                # [build_platform != target_platform]
-    - r-r6                       # [build_platform != target_platform]
-    - r-rlang                    # [build_platform != target_platform]
-    - r-withr                    # [build_platform != target_platform]
     - {{ posix }}filesystem      # [win]
     - {{ posix }}git
     - {{ posix }}zip             # [win]
-
   host:
     - r-base
     - r-checkmate
@@ -44,7 +35,6 @@ requirements:
     - r-r6 >=2.4.0
     - r-rlang >=0.4.7
     - r-withr >=2.5.0
-
   run:
     - r-base
     - r-checkmate
