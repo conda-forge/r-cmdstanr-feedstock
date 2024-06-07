@@ -1,5 +1,5 @@
 {% set name = "r-cmdstanr" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/stan-dev/cmdstanr/archive/v{{ version }}.tar.gz
-  sha256: cf59fbed7163dcee55533d5394809414717b281c27414ec7374e360458f8e31a
+  sha256: d151ad183a9aa340bd444ccf3e75e133f0ce4cb9502a917b98406f4f593209f5
 
 build:
   merge_build_host: true  # [win]
